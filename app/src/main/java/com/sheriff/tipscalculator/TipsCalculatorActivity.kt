@@ -1,9 +1,14 @@
 package com.sheriff.tipscalculator
 
+import android.os.Build
 import android.os.Bundle
+import android.view.View.VISIBLE
+import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.sheriff.tipscalculator.databinding.ActivityTipsCalculatorBinding
 import java.text.NumberFormat
+import java.util.*
 
 class TipsCalculatorActivity : AppCompatActivity() {
 
@@ -26,8 +31,10 @@ class TipsCalculatorActivity : AppCompatActivity() {
             when {
                 cost == null -> { // check cost is null or not
                     binding.tvTipsAmount.text = ""
+                    Toast.makeText(this, getString(R.string.enter_cost_of_service), Toast.LENGTH_SHORT).show()
                     return@setOnClickListener
                 }
+                else ->  binding.tvTipsAmount.visibility = VISIBLE
             }
 
             // Get selected Value to calculate the percentage
@@ -40,7 +47,7 @@ class TipsCalculatorActivity : AppCompatActivity() {
             }
 
             // Multiply total amount with percentage
-            var tipAmount = tipPercentage * cost!!
+            var tipAmount = tipPercentage * cost
 
             // Check if roundUp is Enable or not
             val roundUp = binding.switchToRoundTips.isChecked
