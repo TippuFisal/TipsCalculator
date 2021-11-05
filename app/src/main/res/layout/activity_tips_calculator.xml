@@ -28,6 +28,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etCostOfService"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:maxLines="1"
@@ -54,6 +55,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvLabelService">
 
                 <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rbAmazing"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:padding="6dp"
@@ -62,6 +64,7 @@
                     android:text="@string/amazing_20" />
 
                 <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rbGood"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:padding="6dp"
@@ -70,6 +73,7 @@
                     android:text="@string/good_18" />
 
                 <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rbOkay"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:padding="6dp"
@@ -96,6 +100,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/switchToRoundTips" />
 
             <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvTipsAmount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="6dp"
