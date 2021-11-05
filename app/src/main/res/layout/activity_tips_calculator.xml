@@ -29,7 +29,10 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:inputType="numberDecimal"
+                    android:maxLength="10"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -54,7 +57,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:padding="6dp"
-                    android:buttonTint="@color/purple_500"
+                    android:buttonTint="@color/app_color"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:text="@string/amazing_20" />
 
@@ -62,7 +65,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:padding="6dp"
-                    android:buttonTint="@color/purple_500"
+                    android:buttonTint="@color/app_color"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:text="@string/good_18" />
 
@@ -70,7 +73,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:padding="6dp"
-                    android:buttonTint="@color/purple_500"
+                    android:buttonTint="@color/app_color"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:text="@string/okay_15" />
 
@@ -81,7 +84,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/round_up_tip"
-                app:thumbTint="@color/purple_500"
+                app:thumbTint="@color/app_color"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 app:layout_constraintTop_toBottomOf="@+id/rgTipsPercentage" />
 
