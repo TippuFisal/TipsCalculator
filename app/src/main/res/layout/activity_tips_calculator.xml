@@ -31,9 +31,9 @@
                     android:id="@+id/etCostOfService"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:maxLines="1"
                     android:inputType="numberDecimal"
-                    android:maxLength="10"/>
+                    android:maxLength="10"
+                    android:maxLines="1" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -58,28 +58,28 @@
                     android:id="@+id/rbAmazing"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:padding="6dp"
                     android:buttonTint="@color/app_color"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    android:text="@string/amazing_20" />
+                    android:padding="6dp"
+                    android:text="@string/amazing_20"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
                 <com.google.android.material.radiobutton.MaterialRadioButton
                     android:id="@+id/rbGood"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:padding="6dp"
                     android:buttonTint="@color/app_color"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    android:text="@string/good_18" />
+                    android:padding="6dp"
+                    android:text="@string/good_18"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
                 <com.google.android.material.radiobutton.MaterialRadioButton
                     android:id="@+id/rbOkay"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:padding="6dp"
                     android:buttonTint="@color/app_color"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    android:text="@string/okay_15" />
+                    android:padding="6dp"
+                    android:text="@string/okay_15"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
             </RadioGroup>
 
@@ -88,9 +88,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/round_up_tip"
-                app:thumbTint="@color/app_color"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                app:layout_constraintTop_toBottomOf="@+id/rgTipsPercentage" />
+                app:layout_constraintTop_toBottomOf="@+id/rgTipsPercentage"
+                app:thumbTint="@color/app_color" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnCalculate"
@@ -105,8 +105,8 @@
                 android:layout_height="wrap_content"
                 android:padding="6dp"
                 android:text="@string/tip_amount"
-                app:layout_constraintTop_toBottomOf="@+id/btnCalculate"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnCalculate" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

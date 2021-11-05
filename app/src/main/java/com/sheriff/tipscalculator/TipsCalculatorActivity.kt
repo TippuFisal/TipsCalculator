@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.sheriff.tipscalculator.databinding.ActivityTipsCalculatorBinding
 import java.text.NumberFormat
-import kotlin.math.cos
 
 class TipsCalculatorActivity : AppCompatActivity() {
 
@@ -14,38 +13,47 @@ class TipsCalculatorActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityTipsCalculatorBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        initUI()
-    }
-
-    private fun initUI() {
         calculateTips()
     }
 
+    /**
+     * calculateTips
+     */
     private fun calculateTips() {
-        binding.btnCalculate.setOnClickListener {
-            val stringInTextField = binding.etCostOfService.text.toString()
-            val cost = stringInTextField.toDoubleOrNull()
-            when{
-                cost == null ->{
+        binding.btnCalculate.setOnClickListener { // button setOnClickListener
+            val stringInTextField = binding.etCostOfService.text.toString() // get String from user
+            val cost = stringInTextField.toDoubleOrNull() // convert user input to Double
+            when {
+                cost == null -> { // check cost is null or not
                     binding.tvTipsAmount.text = ""
                     return@setOnClickListener
                 }
             }
+
+            // Get selected Value to calculate the percentage
             val selectedId = binding.rgTipsPercentage.checkedRadioButtonId
-            val tipPercentage = when(selectedId){
+            val tipPercentage = when (selectedId) {
                 R.id.rbAmazing -> 0.20
                 R.id.rbGood -> 0.18
                 R.id.rbOkay -> 0.15
                 else -> 0.00
             }
+
+            // Multiply total amount with percentage
             var tipAmount = tipPercentage * cost!!
+
+            // Check if roundUp is Enable or not
             val roundUp = binding.switchToRoundTips.isChecked
-            when(roundUp){
+            when (roundUp) {
                 true -> {
-                    tipAmount = kotlin.math.ceil(tipAmount)
+                    tipAmount = kotlin.math.ceil(tipAmount) // convert to roundUp value
                 }
             }
+
+            // Currency Formatting
             val finalTipAmount = NumberFormat.getCurrencyInstance().format(tipAmount)
+
+            // Set final value
             binding.tvTipsAmount.text = getString(R.string.tip_amount, finalTipAmount)
         }
     }
